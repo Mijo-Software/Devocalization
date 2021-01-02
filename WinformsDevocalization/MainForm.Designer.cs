@@ -35,8 +35,17 @@ namespace WinformsDevocalization
 			this.buttonDevocalize = new System.Windows.Forms.Button();
 			this.groupBoxOutput = new System.Windows.Forms.GroupBox();
 			this.textBoxOutput = new System.Windows.Forms.TextBox();
+			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+			this.menuItemFile = new System.Windows.Forms.ToolStripMenuItem();
+			this.menuItemExit = new System.Windows.Forms.ToolStripMenuItem();
+			this.menuItemTools = new System.Windows.Forms.ToolStripMenuItem();
+			this.menuItemShowStatistic = new System.Windows.Forms.ToolStripMenuItem();
+			this.menuItemOptions = new System.Windows.Forms.ToolStripMenuItem();
+			this.menuItemShowStatisticAfterFinish = new System.Windows.Forms.ToolStripMenuItem();
+			this.menuItemRemoveMultipleSpaces = new System.Windows.Forms.ToolStripMenuItem();
 			this.groupBoxInput.SuspendLayout();
 			this.groupBoxOutput.SuspendLayout();
+			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// textBoxInput
@@ -55,7 +64,7 @@ namespace WinformsDevocalization
 			this.groupBoxInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.groupBoxInput.Controls.Add(this.textBoxInput);
-			this.groupBoxInput.Location = new System.Drawing.Point(12, 12);
+			this.groupBoxInput.Location = new System.Drawing.Point(12, 27);
 			this.groupBoxInput.Name = "groupBoxInput";
 			this.groupBoxInput.Size = new System.Drawing.Size(256, 119);
 			this.groupBoxInput.TabIndex = 1;
@@ -66,8 +75,7 @@ namespace WinformsDevocalization
 			// 
 			this.buttonDevocalize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.buttonDevocalize.Enabled = false;
-			this.buttonDevocalize.Location = new System.Drawing.Point(15, 137);
+			this.buttonDevocalize.Location = new System.Drawing.Point(15, 149);
 			this.buttonDevocalize.Name = "buttonDevocalize";
 			this.buttonDevocalize.Size = new System.Drawing.Size(250, 23);
 			this.buttonDevocalize.TabIndex = 2;
@@ -77,11 +85,10 @@ namespace WinformsDevocalization
 			// 
 			// groupBoxOutput
 			// 
-			this.groupBoxOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+			this.groupBoxOutput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.groupBoxOutput.Controls.Add(this.textBoxOutput);
-			this.groupBoxOutput.Location = new System.Drawing.Point(15, 166);
+			this.groupBoxOutput.Location = new System.Drawing.Point(12, 181);
 			this.groupBoxOutput.Name = "groupBoxOutput";
 			this.groupBoxOutput.Size = new System.Drawing.Size(256, 119);
 			this.groupBoxOutput.TabIndex = 3;
@@ -99,25 +106,105 @@ namespace WinformsDevocalization
 			this.textBoxOutput.Size = new System.Drawing.Size(250, 100);
 			this.textBoxOutput.TabIndex = 0;
 			// 
+			// menuStrip1
+			// 
+			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuItemFile,
+            this.menuItemTools,
+            this.menuItemOptions});
+			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+			this.menuStrip1.Name = "menuStrip1";
+			this.menuStrip1.Size = new System.Drawing.Size(280, 24);
+			this.menuStrip1.TabIndex = 0;
+			this.menuStrip1.Text = "menuStrip1";
+			// 
+			// menuItemFile
+			// 
+			this.menuItemFile.AutoToolTip = true;
+			this.menuItemFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuItemExit});
+			this.menuItemFile.Name = "menuItemFile";
+			this.menuItemFile.Size = new System.Drawing.Size(37, 20);
+			this.menuItemFile.Text = "&File";
+			// 
+			// menuItemExit
+			// 
+			this.menuItemExit.AutoToolTip = true;
+			this.menuItemExit.Name = "menuItemExit";
+			this.menuItemExit.Size = new System.Drawing.Size(180, 22);
+			this.menuItemExit.Text = "E&xit";
+			this.menuItemExit.Click += new System.EventHandler(this.MenuItemExit_Click);
+			// 
+			// menuItemTools
+			// 
+			this.menuItemTools.AutoToolTip = true;
+			this.menuItemTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuItemShowStatistic});
+			this.menuItemTools.Name = "menuItemTools";
+			this.menuItemTools.Size = new System.Drawing.Size(46, 20);
+			this.menuItemTools.Text = "&Tools";
+			// 
+			// menuItemShowStatistic
+			// 
+			this.menuItemShowStatistic.AutoToolTip = true;
+			this.menuItemShowStatistic.Name = "menuItemShowStatistic";
+			this.menuItemShowStatistic.Size = new System.Drawing.Size(146, 22);
+			this.menuItemShowStatistic.Text = "&Show statistic";
+			this.menuItemShowStatistic.Click += new System.EventHandler(this.MenuItemShowStatistic_Click);
+			// 
+			// menuItemOptions
+			// 
+			this.menuItemOptions.AutoToolTip = true;
+			this.menuItemOptions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuItemShowStatisticAfterFinish,
+            this.menuItemRemoveMultipleSpaces});
+			this.menuItemOptions.Name = "menuItemOptions";
+			this.menuItemOptions.Size = new System.Drawing.Size(61, 20);
+			this.menuItemOptions.Text = "&Options";
+			// 
+			// menuItemShowStatisticAfterFinish
+			// 
+			this.menuItemShowStatisticAfterFinish.AutoToolTip = true;
+			this.menuItemShowStatisticAfterFinish.CheckOnClick = true;
+			this.menuItemShowStatisticAfterFinish.Name = "menuItemShowStatisticAfterFinish";
+			this.menuItemShowStatisticAfterFinish.Size = new System.Drawing.Size(205, 22);
+			this.menuItemShowStatisticAfterFinish.Text = "S&how statistic after finish";
+			// 
+			// menuItemRemoveMultipleSpaces
+			// 
+			this.menuItemRemoveMultipleSpaces.AutoToolTip = true;
+			this.menuItemRemoveMultipleSpaces.Checked = true;
+			this.menuItemRemoveMultipleSpaces.CheckOnClick = true;
+			this.menuItemRemoveMultipleSpaces.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.menuItemRemoveMultipleSpaces.Name = "menuItemRemoveMultipleSpaces";
+			this.menuItemRemoveMultipleSpaces.Size = new System.Drawing.Size(205, 22);
+			this.menuItemRemoveMultipleSpaces.Text = "&Remove multiple spaces";
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(280, 289);
+			this.ClientSize = new System.Drawing.Size(280, 308);
 			this.Controls.Add(this.groupBoxOutput);
 			this.Controls.Add(this.buttonDevocalize);
 			this.Controls.Add(this.groupBoxInput);
+			this.Controls.Add(this.menuStrip1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MainMenuStrip = this.menuStrip1;
 			this.MaximizeBox = false;
 			this.Name = "MainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Devocalization";
+			this.Load += new System.EventHandler(this.MainForm_Load);
 			this.groupBoxInput.ResumeLayout(false);
 			this.groupBoxInput.PerformLayout();
 			this.groupBoxOutput.ResumeLayout(false);
 			this.groupBoxOutput.PerformLayout();
+			this.menuStrip1.ResumeLayout(false);
+			this.menuStrip1.PerformLayout();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -128,6 +215,14 @@ namespace WinformsDevocalization
 		private System.Windows.Forms.Button buttonDevocalize;
 		private System.Windows.Forms.GroupBox groupBoxOutput;
 		private System.Windows.Forms.TextBox textBoxOutput;
+		private System.Windows.Forms.MenuStrip menuStrip1;
+		private System.Windows.Forms.ToolStripMenuItem menuItemFile;
+		private System.Windows.Forms.ToolStripMenuItem menuItemExit;
+		private System.Windows.Forms.ToolStripMenuItem menuItemOptions;
+		private System.Windows.Forms.ToolStripMenuItem menuItemShowStatisticAfterFinish;
+		private System.Windows.Forms.ToolStripMenuItem menuItemRemoveMultipleSpaces;
+		private System.Windows.Forms.ToolStripMenuItem menuItemTools;
+		private System.Windows.Forms.ToolStripMenuItem menuItemShowStatistic;
 	}
 }
 
