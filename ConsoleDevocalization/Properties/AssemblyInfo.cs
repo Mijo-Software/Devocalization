@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Mijo-Software")]
 [assembly: AssemblyProduct("ConsoleDevocalization")]
-[assembly: AssemblyCopyright("Copyright © MJ 2020-2023")]
+[assembly: AssemblyCopyright("Copyright © MJ 2020-2025")]
 [assembly: AssemblyTrademark("Devocalization")]
 [assembly: AssemblyCulture("")]
 
@@ -32,6 +32,6 @@ using System.Runtime.InteropServices;
 // Sie können alle Werte angeben oder die standardmäßigen Build- und Revisionsnummern 
 // übernehmen, indem Sie "*" eingeben:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.1.0.2")]
-[assembly: AssemblyFileVersion("1.1.0.2")]
+[assembly: AssemblyVersion("1.1.1.3")]
+[assembly: AssemblyFileVersion("1.1.1.3")]
 [assembly: NeutralResourcesLanguage("en")]
